@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ELMA Test - Планировщик</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="w3-light-grey">
+  <!-- Navigation Bar -->
+  <div class="w3-bar w3-top w3-white w3-xlarge w3-card-2" style="z-index:4">
+    <a href="index.html" class="w3-bar-item w3-right w3-button w3-text-red w3-hover-red"><b>Планировщик</b></a>
+    <a id="openSidebar" href="#" class="w3-bar-item w3-button w3-hide-large w3-hover-red w3-text-grey"><i
+        class="fa fa-bars"></i></a>
+  </div>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-collapse w3-white w3-animate-left w3-light-gray w3-card-4" style="z-index:3;width:300px;"
+    id="mySidebar"><br />
+    <div class="w3-container">
+      <div class="w3-hide-large">
+        <i class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right closeSidebar"></i>
+      </div>
+      <h3>Backlog</h3>
+    </div>
+    <div class="w3-bar-block">
+    </div>
+    <p></p>
+  </nav>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity closeSidebar" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <div class="w3-main" style="margin-left:300px;margin-top:52px;">
+    <div class="w3-container" style="max-width: 870px;padding-top:5px;margin-left: auto;margin-right: auto;">
+      <button id="left" class="w3-bar-item w3-button w3-padding w3-red w3-card-2"><i
+          class="fa fa-arrow-left fa-fw"></i></button>
+      <button id="right" class="w3-bar-item w3-button w3-padding w3-red w3-card-2 w3-right"><i
+          class="fa fa-arrow-right fa-fw"></i></button>
+    </div>
+  </div>
+
+  <!-- Schedule -->
+  <div class="w3-main" style="margin-left:300px;margin-top:5px;">
+    <div class="shedule w3-container">
+    </div>
+  </div>
+
+  <script src="myclass.js"></script>
+  <script src="util.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

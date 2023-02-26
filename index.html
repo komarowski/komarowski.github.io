@@ -1,53 +1,184 @@
-
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="assets/e.ico">
-  <link rel='stylesheet' href='assets/css/style.css' />
-  <link rel='stylesheet' href='assets/css/prism.css' />
-</head>
-
-<body>
-  <main class="main-wrapper">
-    <div class="sidebar">
-      <div class="logo-container">
-        <a class="logo-text" href="index.html">Explorer.md</a>
+<html lang="en">
+  <head>
+    <title>Comparator - Comparison of dialogs in different languages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Comparison of dialogs in different languages.">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/w5.css">
+    <style></style>
+  </head>
+  <body class="">
+    <header class="w5-header">
+      <div class="w5-header-logo">
+        Serbian-English Dialogues
       </div>
-      <div id="tree-view" data-file="None" class="tree-view">
-      </div>
-    </div>
+    </header>
 
-    <div class="main-container">
-      <div class="container">
-        <div class="row">
-          <div class="blog-col">
-            <div id="blog" class="blog-container">
-              <h1>Welcome to Explorer.md!</h1>
-              <h2>GitHub</h2>
-              <p>This is an example of the output of the Explorer.md application from <a href="https://github.com/komarowski/Explorer-md">GitHub repository</a>.</p>
+    <main class="w5-main">
+      <div class="w5-chat-header">
+        <h2>Where are you from?</h2>
+        <audio controls>
+          <source src="assets/mp3/whereareyoufrom.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div> 
+      <div class="w5-chat-container">
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-primary"> 
+                Zdravo. Kako si?
+              </p>
             </div>
           </div>
-
-          <div class="content-col">
-            <div class="content-container">
-              <ul id="table-of-content" class="table-of-contents">
-              </ul>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-secondary"> 
+                Hello. How are you? 
+              </p>
             </div>
           </div>
+        </div>
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-primary"> 
+                Ćao. 
+                <select data-bindselect="howareyou2" id="howareyou1">
+                  <option value="0">Dobro sam</option>
+                  <option value="1">Ja sam odlično</option>
+                  <option value="2">Tako tako</option>
+                </select>.  I vi?
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-secondary"> 
+                Hi. 
+                <select data-bindselect="howareyou1" id="howareyou2">
+                  <option value="0">I’m fine</option>
+                  <option value="1">I'm great</option>
+                  <option value="2">So-so</option>
+                </select>. And you?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-primary"> 
+                Dobro. Da li govorite srpski?
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-secondary"> 
+                Good. Do you speak Serbian? 
+              </p>
+            </div>
+          </div>
+        </div>
 
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-primary"> 
+                <select data-bindselect="doyouspeak2" id="doyouspeak1">
+                  <option value="0">Malo</option>
+                  <option value="1">Na osnovnom nivou</option>
+                  <option value="2">Govorim srpski veoma dobro</option>
+                </select>
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-secondary"> 
+                <select data-bindselect="doyouspeak1" id="doyouspeak2">
+                  <option value="0">A little</option>
+                  <option value="1">At a basic level</option>
+                  <option value="2">I speak Serbian very well</option>
+                </select>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-primary"> 
+                Odakle si?
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-secondary"> 
+                Where are you from? 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-primary"> 
+                Ja sam iz Kazahstana.
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-secondary"> 
+                I’am from Kazakhstan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-primary"> 
+                Drago mi je da smo se upoznali.
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message">
+              <p class="w5-text w5-text-theme-secondary"> 
+                Nice to meet you. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w5-chat-row">
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-primary"> 
+                I drago mi je da smo se upoznali.
+              </p>
+            </div>
+          </div>
+          <div class="w5-chat-messages">
+            <div class="w5-chat-message w5-response">
+              <p class="w5-text w5-text-theme-secondary"> 
+                Nice to meet you too.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </main>
 
-    </div>
-  </main>
-
-  <script src="treeview.js"></script>
-  <script src="assets/js/treeview-init.js"></script>
-  <script src="assets/js/content-table.js"></script>  
-  <script src="assets/js/prism.js"></script>
-
-</body>
+    <script src="assets/js/utils.js"></script>
+  </body>
 </html>

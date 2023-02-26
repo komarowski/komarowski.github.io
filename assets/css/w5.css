@@ -1,0 +1,148 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: normal;
+	line-height: 1.5;
+  font-size: 16px;
+  background-color: #F5F5F5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 5px 0;
+	line-height: 1.5;
+  font-weight: 600;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+p {
+  margin: 1px;
+}
+
+.w5-header {
+  width: 100%;
+  box-shadow: 0 1px 2px rgb(60 64 67 / 30%);
+  background: #5D5D5D;
+  margin-bottom: 5px;
+}
+
+.w5-header-logo {
+  padding: 5px;
+  color: #FFFFFF;
+}
+
+.w5-main {
+  width: 100%;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.w5-chat-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.w5-chat-container{
+  padding: 5px 10px;
+  background-color: #FFF; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.w5-chat-row{
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.w5-chat-messages{
+  width: 100%;
+  padding: 5px 5px 0px 5px;
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.w5-chat-message{
+  display: flex;
+}
+
+.w5-response{
+  justify-content: end;
+}
+
+.w5-text{
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.w5-text-theme-primary{
+  background: #d1f7ee;
+}
+
+.w5-text-theme-secondary{
+  background: #ffc8bb;
+}
+
+
+audio{
+  display: inline;
+  width: 150px;
+  height: 30px;
+  /* zoom: 80%; */
+}
+
+audio::-webkit-media-controls-timeline{
+  display: none;
+}
+
+audio::-webkit-media-controls-time-remaining-display{
+  display: none;
+}
+
+audio::-webkit-media-controls-current-time-display{
+  display: none;
+}
+
+select{
+  font-family: "Montserrat", Arial, sans-serif;
+  border: 1px solid #5D5D5D;
+  border-radius: 4px;
+  font-size: 16px;
+  /* background: inherit; */
+}
+
+@media (max-width: 600px) {
+  .w5-chat-row{
+    flex-direction: column;
+  }
+
+  .w5-chat-container{
+    padding: 2px 2px;
+  }
+
+  .w5-chat-row{
+    margin-bottom: 1px;
+  }
+
+  .w5-chat-messages{
+    padding: 0px 0px 0px 0px;
+  }
+}

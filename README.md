@@ -1,3 +1,2 @@
-# Demo for Explorer-md
+# Testing new project
 
-This is demo for [Explorer-md](https://github.com/komarowski/Explorer-md) 

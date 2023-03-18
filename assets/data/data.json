@@ -1,0 +1,187 @@
+
+  [
+    {
+      "title": "Where are you from?",
+      "mp3":
+      {
+        "en":"",
+        "ru":"",
+        "sr-cyr":"assets/mp3/whereareyoufrom-sr.mp3",
+        "sr-lat":"assets/mp3/whereareyoufrom-sr.mp3"
+      },
+      "dialogue":[
+        {
+          "en":"Hello. How are you?",
+          "ru":"Привет, как дела?",
+          "sr-cyr":"Здраво. Како си?",
+          "sr-lat":"Zdravo. Kako si?"
+        },
+        {
+          "en":"Hi. <select>0</select>. And you?",
+          "ru":"Привет. <select>0</select>. А у тебя?",
+          "sr-cyr":"Ћао. <select>0</select>. И ви?",
+          "sr-lat":"Ćao. <select>0</select>. I vi?"
+        },
+        {
+          "en":"Good. Do you speak Serbian?",
+          "ru":"Хорошо. Вы говорите на сербском?",
+          "sr-cyr":"Добро. Да ли говорите српски?",
+          "sr-lat":"Dobro. Da li govorite srpski?"
+        },
+        {
+          "en":"<select>1</select>",
+          "ru":"<select>1</select>",
+          "sr-cyr":"<select>1</select>",
+          "sr-lat":"<select>1</select>"
+        },
+        {
+          "en":"Where are you from?",
+          "ru":"Откуда вы?",
+          "sr-cyr":"Одакле си?",
+          "sr-lat":"Odakle si?"
+        },
+        {
+          "en":"I'm from Kazakhstan.",
+          "ru":"Я из Казахстана.",
+          "sr-cyr":"Ја сам из Казахстана.",
+          "sr-lat":"Ja sam iz Kazahstana."
+        },
+        {
+          "en":"Nice to meet you.",
+          "ru":"Рад с вами познакомиться.",
+          "sr-cyr":"Драго ми је да смо се упознали.",
+          "sr-lat":"Drago mi je da smo se upoznali."
+        },
+        {
+          "en":"Nice to meet you too.",
+          "ru":"И я рад с вами познакомиться.",
+          "sr-cyr":"И драго ми је да смо се упознали.",
+          "sr-lat":"I drago mi je da smo se upoznali."
+        }
+      ],
+      "selects":[
+        {
+          "options": [
+            {
+              "en":"I'm fine",
+              "ru":"Хорошо",
+              "sr-cyr":"Добро сам",
+              "sr-lat":"Dobro sam"
+            },
+            {
+              "en":"I'm great",
+              "ru":"У меня все отлично",
+              "sr-cyr":"Ја сам одлично",
+              "sr-lat":"Ja sam odlično"
+            },
+            {
+              "en":"So-so",
+              "ru":"Так себе",
+              "sr-cyr":"Тако тако",
+              "sr-lat":"Tako tako"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "en":"A little",
+              "ru":"Немного",
+              "sr-cyr":"Мало",
+              "sr-lat":"Malo"
+            },
+            {
+              "en":"At a basic level",
+              "ru":"На базовом уровне",
+              "sr-cyr":"На основном нивоу",
+              "sr-lat":"Na osnovnom nivou"
+            },
+            {
+              "en":"I speak Serbian very well",
+              "ru":"Я очень хорошо говорю по сербски",
+              "sr-cyr":"Говорим српски веома добро",
+              "sr-lat":"Govorim srpski veoma dobro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What time is it?",
+      "mp3":
+      {
+        "en":"",
+        "ru":"",
+        "sr-cyr":"assets/mp3/whattimeisit-sr.mp3",
+        "sr-lat":"assets/mp3/whattimeisit-sr.mp3"
+      },
+      "dialogue":[
+        {
+          "en":"Excuse me, what's your name?",
+          "ru":"Простите, как вас зовут?",
+          "sr-cyr":"Извините, како се зовете?",
+          "sr-lat":"Izvinite, kako se zovete?"
+        },
+        {
+          "en":"My name is Jessica. What’s yours?",
+          "ru":"Меня зовут Джессика. А вас?",
+          "sr-cyr":"Моје име је Џесика. Шта је твоје?",
+          "sr-lat":"Moje ime je Džesika. Šta je tvoje?"
+        },
+        {
+          "en":"John.",
+          "ru":"Джон.",
+          "sr-cyr":"Јохн.",
+          "sr-lat":"John."
+        },
+        {
+          "en":"Do you know what time it is?",
+          "ru":"Вы не знаете который час?",
+          "sr-cyr":"Да ли знате колико је сати?",
+          "sr-lat":"Da li znate koliko je sati?"
+        },
+        {
+          "en":"Sure. It's <select>0</select>.",
+          "ru":"Конечно. Сейчас <select>0</select>.",
+          "sr-cyr":"Наравно. Сада је <select>0</select>.",
+          "sr-lat":"Naravno. Sada je <select>0</select>."
+        },
+        {
+          "en":"Thanks.",
+          "ru":"Спасибо.",
+          "sr-cyr":"Хвала.",
+          "sr-lat":"Hvala."
+        },
+        {
+          "en":"You're welcome.",
+          "ru":"Пожалуйста.",
+          "sr-cyr":"Нема на чему.",
+          "sr-lat":"Nema na čemu."
+        }
+      ],
+      "selects":[
+        {
+          "options": [
+            {
+              "en":"five past ten (5:10) PM",
+              "ru":"пять десять вечера",
+              "sr-cyr":"пет и десет поподне",
+              "sr-lat":"pet i deset popodne"
+            },
+            {
+              "en":"half past 4 (4:30) AM",
+              "ru":"половина пятого утра.",
+              "sr-cyr":"пола пет ујутру.",
+              "sr-lat":"pola pet ujutru"
+            },
+            {
+              "en":"ten (10:00) PM",
+              "ru":"десять часов вечера",
+              "sr-cyr":"десет сати увече",
+              "sr-lat":"deset sati uveče"
+            }
+          ]
+        }
+      ]
+    }
+  ]

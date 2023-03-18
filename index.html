@@ -1,184 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Comparator - Comparison of dialogs in different languages</title>
+    <title>Phrasebook.js - Dialogues in different languages</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Comparison of dialogs in different languages.">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/w5.css">
-    <style></style>
   </head>
-  <body class="">
-    <header class="w5-header">
-      <div class="w5-header-logo">
-        Serbian-English Dialogues
-      </div>
+  <body class="w5-flex-column">
+    <header class="w5-header w5-flex-center w5-theme-header">
+      <div class="w5-flex-adaptive w5-container w5-header-container">
+        <select id="select-dialog" class="w5-select-dialogs w5-theme-header"></select>
+        <div class="w5-flex">
+          <select id="select-lang-first" class="w5-select-lang w5-theme-request">
+            <option value="en">English</option>
+            <option value="sr-lat">Serbian (lat)</option>
+            <option value="sr-cyr">Serbian (cyr)</option>
+            <option value="ru">Russian</option>
+          </select>
+          <svg id="svg-translate" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="#ffffff">
+            <path d="M271 936 80 745l192-192 42 42-120 120h649v60H194l119 119-42 42Zm418-337-42-42 119-119H117v-60h649L646 258l42-42 192 192-191 191Z"/>
+          </svg>
+          <select id="select-lang-second" class="w5-select-lang w5-theme-response">
+            <option value="en">English</option>
+            <option value="sr-lat">Serbian (lat)</option>
+            <option value="sr-cyr">Serbian (cyr)</option>
+            <option value="ru">Russian</option>
+          </select>
+        </div>
+      </div>    
     </header>
 
-    <main class="w5-main">
-      <div class="w5-chat-header">
-        <h2>Where are you from?</h2>
-        <audio controls>
-          <source src="assets/mp3/whereareyoufrom.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      </div> 
-      <div class="w5-chat-container">
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-primary"> 
-                Zdravo. Kako si?
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-secondary"> 
-                Hello. How are you? 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-primary"> 
-                Ćao. 
-                <select data-bindselect="howareyou2" id="howareyou1">
-                  <option value="0">Dobro sam</option>
-                  <option value="1">Ja sam odlično</option>
-                  <option value="2">Tako tako</option>
-                </select>.  I vi?
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-secondary"> 
-                Hi. 
-                <select data-bindselect="howareyou1" id="howareyou2">
-                  <option value="0">I’m fine</option>
-                  <option value="1">I'm great</option>
-                  <option value="2">So-so</option>
-                </select>. And you?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-primary"> 
-                Dobro. Da li govorite srpski?
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-secondary"> 
-                Good. Do you speak Serbian? 
-              </p>
-            </div>
-          </div>
-        </div>
+    <!-- PhraseBook.audioElement -->
+    <div id="audio" class="w5-margin-10"></div>
+    
+    <!-- PhraseBook.dialogElement -->  
+    <main id="dialog" class="w5-container"></main>
 
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-primary"> 
-                <select data-bindselect="doyouspeak2" id="doyouspeak1">
-                  <option value="0">Malo</option>
-                  <option value="1">Na osnovnom nivou</option>
-                  <option value="2">Govorim srpski veoma dobro</option>
-                </select>
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-secondary"> 
-                <select data-bindselect="doyouspeak1" id="doyouspeak2">
-                  <option value="0">A little</option>
-                  <option value="1">At a basic level</option>
-                  <option value="2">I speak Serbian very well</option>
-                </select>
-              </p>
-            </div>
+    <!-- PhraseBook.dialogRowTemplate -->
+    <template id="dialog-row">
+      <div class="w5-flex-adaptive w5-margin-10">
+        <div class="w5-width-100">
+          <div class="w5-flex">
+            <p class="w5-text w5-text-request w5-theme-request"> 
+            </p>
           </div>
         </div>
-
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-primary"> 
-                Odakle si?
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-secondary"> 
-                Where are you from? 
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-primary"> 
-                Ja sam iz Kazahstana.
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-secondary"> 
-                I’am from Kazakhstan.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-primary"> 
-                Drago mi je da smo se upoznali.
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message">
-              <p class="w5-text w5-text-theme-secondary"> 
-                Nice to meet you. 
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="w5-chat-row">
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-primary"> 
-                I drago mi je da smo se upoznali.
-              </p>
-            </div>
-          </div>
-          <div class="w5-chat-messages">
-            <div class="w5-chat-message w5-response">
-              <p class="w5-text w5-text-theme-secondary"> 
-                Nice to meet you too.
-              </p>
-            </div>
+        <div class="w5-width-100">
+          <div class="w5-flex">
+            <p class="w5-text w5-text-response w5-theme-response"> 
+            </p>
           </div>
         </div>
       </div>
-    </main>
+    </template>
 
-    <script src="assets/js/utils.js"></script>
+    <footer class="w5-footer">
+      <a href="https://github.com/komarowski/komarowski.github.io" class="w5-flex w5-footer-text">
+        Phrasebook.js&nbsp;&nbsp;
+        <svg width="25" height="25" viewBox="0 0 18 18">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </footer>
+
+    <!-- <script src="assets/js/data.js"></script> -->
+    <script src="assets/js/phraseBook.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

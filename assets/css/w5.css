@@ -1,3 +1,48 @@
+/*
+* w5.css
+* 05.03.2023
+*/
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Colors
+- Base Styles
+- Layout
+- Components
+- Media Queries
+*/
+
+
+/* Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+:root {
+  --very-dark-gray: #5d5d5d;
+  --very-light-gray: #F5F5F5;
+  --very-soft-cyan: #a7e3d5;
+  --pale-red: #ffc8bb;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+.w5-theme-request{
+  background: var(--very-soft-cyan);
+}
+
+.w5-theme-response{
+  background: var(--pale-red);
+}
+
+.w5-theme-header{
+  color: var(--white);
+  background: var(--very-dark-gray);
+}
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 html,
 body {
 	height: 100%;
@@ -5,10 +50,10 @@ body {
 	margin: 0;
 	padding: 0;
   font-family: "Montserrat", Arial, sans-serif;
-  font-weight: normal;
 	line-height: 1.5;
   font-size: 16px;
-  background-color: #F5F5F5;
+  background-color: var(--very-light-gray);
+  align-items: center;
 }
 
 h1,
@@ -18,99 +63,130 @@ h4,
 h5,
 h6 {
 	margin: 5px 0;
-	line-height: 1.5;
-  font-weight: 600;
 }
 
 h2 {
 	font-size: 18px;
 }
 
-p {
-  margin: 1px;
+select{
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
-.w5-header {
-  width: 100%;
-  box-shadow: 0 1px 2px rgb(60 64 67 / 30%);
-  background: #5D5D5D;
-  margin-bottom: 5px;
-}
 
-.w5-header-logo {
-  padding: 5px;
-  color: #FFFFFF;
-}
+/* Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.w5-main {
-  width: 100%;
-  max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.w5-chat-header{
+.w5-flex{
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-
-.w5-chat-container{
-  padding: 5px 10px;
-  background-color: #FFF; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.w5-chat-row{
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.w5-chat-messages{
-  width: 100%;
-  padding: 5px 5px 0px 5px;
+.w5-flex-column{
   display: flex;
   flex-direction: column;
-  font-weight: normal;
-  box-sizing: border-box;
+  width: 100%;
 }
 
-.w5-chat-message{
+.w5-flex-adaptive{
   display: flex;
 }
 
-.w5-response{
+.w5-flex-end{
   justify-content: end;
 }
 
-.w5-text{
+.w5-container{
+  width: 100%;
+  max-width: 800px;
   padding: 5px;
-  border-radius: 5px;
   box-sizing: border-box;
 }
 
-.w5-text-theme-primary{
-  background: #d1f7ee;
+.w5-width-100{
+  width: 100%;
 }
 
-.w5-text-theme-secondary{
-  background: #ffc8bb;
+.w5-margin-10{
+  margin-bottom: 10px;
 }
 
+
+/* Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.w5-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(93, 93, 93, 0.45);
+  margin-bottom: 10px;
+}
+
+.w5-header-container {
+  justify-content: space-between;
+}
+
+.w5-select-lang {
+  border: 0;
+  padding: 5px;
+  margin: 2px 5px;
+}
+
+.w5-select-dialogs{
+  padding: 5px;
+  border: 2px solid var(--white);
+}
+
+.w5-select-text{
+  max-width: 250px;
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+}
+
+.w5-text{
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px 0;
+  box-sizing: border-box;
+}
+
+.w5-text-request{
+  margin-right: 10px;
+}
+
+.w5-text-response{
+  margin-left: 10px;
+}
+
+.w5-footer {
+  display: flex; 
+  align-items: end; 
+  height: 100%; 
+  box-sizing: border-box; 
+  padding-bottom: 30px;
+}
+
+.w5-footer-text {
+  text-decoration: none;
+  color: inherit;
+}
 
 audio{
-  display: inline;
-  width: 150px;
   height: 30px;
-  /* zoom: 80%; */
+  min-height: 30px;
+  border-radius: 10px;
+  border: 2px solid var(--very-dark-gray);
 }
 
-audio::-webkit-media-controls-timeline{
-  display: none;
+audio::-webkit-media-controls-panel{
+  background: var(--very-light-gray);
+  padding: 2px;
 }
 
 audio::-webkit-media-controls-time-remaining-display{
@@ -121,28 +197,65 @@ audio::-webkit-media-controls-current-time-display{
   display: none;
 }
 
-select{
-  font-family: "Montserrat", Arial, sans-serif;
-  border: 1px solid #5D5D5D;
-  border-radius: 4px;
-  font-size: 16px;
-  /* background: inherit; */
-}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media (max-width: 600px) {
-  .w5-chat-row{
+  .w5-flex-adaptive{
     flex-direction: column;
   }
 
-  .w5-chat-container{
-    padding: 2px 2px;
+  .w5-header-container {
+    align-items: center;
   }
 
-  .w5-chat-row{
-    margin-bottom: 1px;
+  .w5-container{
+    padding: 2px;
   }
 
-  .w5-chat-messages{
-    padding: 0px 0px 0px 0px;
+  .w5-text-request{
+    margin-right: 0;
+  }
+  
+  .w5-text-response{
+    margin-left: 0;
+  }
+
+  .w5-select-lang {
+    padding: 2px;
+    font-size: 14px;
+  }
+  
+  .w5-select-dialogs{
+    margin-bottom: 5px;
+  }
+
+  #svg-translate{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  audio{
+    width: 140px;
+  }
+
+  audio::-webkit-media-controls-timeline{
+    display: none;
+  }
+
+  .w5-select-dialogs{
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  .w5-text{
+    font-size: 14px;
+  }
+
+  .w5-text select{
+    font-size: 14px;
   }
 }

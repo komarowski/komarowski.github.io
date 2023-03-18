@@ -1,6 +1,6 @@
-const main = function () {
+const main = async function () {
   const phraseBook = new PhraseBook();
-  phraseBook.init();
+  await phraseBook.init();
   phraseBook.selectLangFirst.addEventListener("change", function() {
     phraseBook.generate();
   });

@@ -1,6 +1,6 @@
 
 class PhraseBook {
-  init() {
+  async init() {
     this.dialogElement = document.getElementById("dialog");
     this.audioElement = document.getElementById("audio");
     this.dialogRowTemplate = document.getElementById("dialog-row");
@@ -13,7 +13,7 @@ class PhraseBook {
     this.dialogIndex = this.getFieldFromLocalStorage("dialogIndex", 0);
 
     if (this.checkElementsExist){
-      this.initData();
+      await this.initData();
       this.selectLangFirst.value = this.langFirst;
       this.selectLangSecond.value = this.langSecond;
       this.selectDialog.value = this.dialogIndex;
@@ -24,7 +24,7 @@ class PhraseBook {
 
   async initData() {
     // this.data = JSON.parse(data);
-    const response = await fetch('./assets/data/data.json');
+    const response = await fetch('https://komarowski.github.io/assets/data/data.json');
     this.data = await response.json();
 
     for (let i = 0; i < this.data.length; i++){

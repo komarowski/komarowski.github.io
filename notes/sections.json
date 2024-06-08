@@ -1,0 +1,12 @@
+[
+  {
+	  "id": 1,
+	  "name": "komarowski",
+	  "description": "komarowski blog"
+  },
+  {
+	  "id": 2,
+	  "name": "test",  
+	  "description": "test section"
+  }
+]

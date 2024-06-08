@@ -1,0 +1,123 @@
+[
+	{
+        "code": "0001",
+        "title": "Medeu - high-altitude sports complex",
+        "description": "How I visited the highest active open-air stadium.",
+        "tagsString": "",
+        "tagsNumber": 11,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.15717,
+        "longitude": 77.05939
+    },
+	{
+        "code": "0002",
+        "title": "Downtown Almaty",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 10,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.22708,
+        "longitude": 76.94523
+    },
+	{
+        "code": "0003",
+        "title": "Almaty Botanical Garden",
+        "description": "",
+        "tagsString": "natural, man-made",
+        "tagsNumber": 10,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.22341,
+        "longitude": 76.91404
+    },
+	{
+        "code": "0004",
+        "title": "Esentai river embankment in Almaty",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 4,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.19802,
+        "longitude": 76.9753
+    },
+	{
+        "code": "0005",
+        "title": "Butakovskiy waterfall",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 1,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.17218,
+        "longitude": 77.11398
+    },
+	{
+        "code": "0006",
+        "title": "Ayusay river gorge",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 1,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.08853,
+        "longitude": 76.94624
+    },
+	{
+        "code": "0007",
+        "title": "Charyn Canyon",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 1,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.35093,
+        "longitude": 79.07639
+    },
+	{
+        "code": "0008",
+        "title": "Alma-Arasan Gorge",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 1,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.06518,
+        "longitude": 76.90683
+    },
+	{
+        "code": "0009",
+        "title": "Big Talgar pass",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 9,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.11293,
+        "longitude": 77.11122
+    },
+	{
+        "code": "0010",
+        "title": "Gorelnik waterfall",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 1,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.12077,
+        "longitude": 77.05412
+    },
+	{
+        "code": "0011",
+        "title": "Three Brothers peak",
+        "description": "",
+        "tagsString": "",
+        "tagsNumber": 1,
+        "isMark": true,
+        "lastUpdate": "August 19th 2023",
+        "latitude": 43.12712,
+        "longitude": 77.01307
+    }
+]

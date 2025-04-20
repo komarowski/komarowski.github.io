@@ -1,0 +1,1 @@
+﻿const nodeList = [{"Id":"Travel","Name":"Travel","Type":"Folder","Children":[{"Id":"Travel/top_5_hikes_near_almaty.html","Name":"Top 5 Hikes Near Almaty","Type":"File","Children":null},{"Id":"Travel/top_5_light_adventures_near_almaty.html","Name":"Top 5 Light Adventures Near Almaty","Type":"File","Children":null}]}];

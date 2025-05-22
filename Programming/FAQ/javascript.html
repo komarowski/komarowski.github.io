@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navigator.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+  <link rel="stylesheet" href="../../assets/core/core.css" />
+  <link rel="stylesheet" href="../../assets/plugins/code/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/prism/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/slider/plugin.css" />
+
+</head>
+
+<body>
+  <header class="site-header flex-container flex-align-center">
+    <div class="flex-container flex-align-center">
+      <div id="btn-menu" class="icon-button icon-button--menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <a class="header-title header-navigation-link" href="../../index.html">Navigator.md</a>
+    </div>
+    <a href="../../help.html" target="_blank" class="icon-button icon-button--help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="main-content flex-container">
+    <div id="sidebar" class="sidebar scroll-container">
+      <div id="nav-tree" data-node="Programming/FAQ/javascript.html" class="navigation-tree"></div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="text-container">
+        <div class="flex-container">
+          <div class="content-block">
+            <div id="markdown" class="markdown">
+              <h1 id="javascript">JavaScript</h1>
+<details>
+<summary>What data types exist in JavaScript?</summary>
+<h3 id="primitive-types-immutable-stored-by-value">Primitive Types (immutable, stored by value)</h3>
+<ul>
+<li><code>undefined</code> – default for uninitialized variables.</li>
+<li><code>null</code> – intentional absence of any value.</li>
+<li><code>boolean</code> - <code>true</code> or <code>false</code>.</li>
+<li><code>number</code> -  integers and floats (<code>-100</code>, <code>3.14</code>).</li>
+<li><code>bigint</code> - for numbers larger than <code>Number.MAX_SAFE_INTEGER</code>.</li>
+<li><code>string</code> - text (&quot;hello&quot;).</li>
+<li><code>symbol</code> - each <code>Symbol()</code> is guaranteed to be unique.</li>
+</ul>
+<h3 id="non-primitive-types-objects-stored-by-reference">Non-Primitive Types (objects, stored by reference)</h3>
+<ul>
+<li><code>object</code> - collections of key-value pairs (<code>{ name: &quot;Alice&quot; }</code>).</li>
+<li><code>function</code> -  callable objects  (<code>() =&gt; {}</code>), technically a subtype of object.</li>
+<li><code>array</code> -  list-like objects  (<code>([1, 2, 3]</code>), also objects.</li>
+<li><code>date</code>, <code>regex</code>, <code>map</code>, <code>set</code> - all object types too.</li>
+</ul>
+</details>
+<details>
+<summary>What is the Event Loop in JavaScript?</summary>
+<p>JavaScript runs in a single thread. The <strong>event loop</strong> is what makes JavaScript <strong>non-blocking</strong> and able to handle <strong>asynchronous code</strong> like <code>setTimeout</code>, <code>fetch</code>, or event listeners.</p>
+<p>⭐ Even though the timeout is 0ms, it runs after the synchronous code, because it waits in the event queue.</p>
+<pre><code class="language-javascript">console.log(&quot;Start&quot;);
+setTimeout(() =&gt; console.log(&quot;Async&quot;), 0);
+console.log(&quot;End&quot;);
+
+// Output:
+// Start
+// End
+// Async
+</code></pre>
+</details>
+<details>
+<summary>What is the Web APIs environment?</summary>
+<p>The Web APIs environment refers to the set of features provided by the browser (or Node.js), not JavaScript itself, that handle things like:</p>
+<ul>
+<li>setTimeout, setInterval</li>
+<li>DOM events (click, keydown, etc.)</li>
+<li>fetch, XMLHttpRequest</li>
+<li>console.log</li>
+<li>WebSockets, geolocation, File API, etc.</li>
+</ul>
+<p>⭐ These APIs <strong>run outside</strong> the JavaScript engine — usually written in C++ inside the browser or Node.js.</p>
+</details>
+<details>
+<summary>Microtasks vs Macrotasks in JavaScript</summary>
+<ul>
+<li><p><strong>Macrotasks</strong> - things like <code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>, and I/O callbacks.</p>
+</li>
+<li><p><strong>Microtasks</strong> - things like <code>Promise.then()</code>, <code>queueMicrotask()</code>, <code>MutationObserver</code>.</p>
+</li>
+</ul>
+<p><img src="event_loop.gif" alt="" /></p>
+<ol>
+<li>Runs all synchronous code first (top-level call stack).</li>
+<li>Then:
+<ul>
+<li>Flushes all microtasks (Promise.then, queueMicrotask, etc.)</li>
+</ul>
+</li>
+<li>Then:
+<ul>
+<li>Runs one macrotask (e.g. setTimeout, setInterval)</li>
+<li>After it finishes, flushes all microtasks again</li>
+</ul>
+</li>
+<li>Repeats from step 3.</li>
+</ol>
+<p>⭐  Even though both are async, the <strong>Promise</strong> (microtask) runs before the <strong>setTimeout</strong> (macrotask).</p>
+<pre><code class="language-JavaScript">console.log('Start');
+
+setTimeout(() =&gt; {
+  console.log('Macrotask - setTimeout');
+}, 0);
+
+Promise.resolve().then(() =&gt; {
+  console.log('Microtask - Promise');
+});
+
+console.log('End');
+
+// Start
+// End
+// Microtask - Promise
+// Macrotask - setTimeout
+</code></pre>
+</details>
+<details>
+<summary>What is "This" Keyword in Javascript?</summary>
+<p>The <code>this</code> keyword refers to the <strong>execution context</strong> — meaning who is calling the function.</p>
+<p>⭐ TIts value depends on how the function is called</p>
+<pre><code class="language-JavaScript">console.log(this); // In browser: Window (global object)
+
+function show() {
+  console.log(this);
+}
+show(); // Still Window (non-strict mode)
+
+const obj = {
+  name: 'Alice',
+  greet() {
+    console.log(this.name);
+  }
+};
+obj.greet(); // Logs &quot;Alice&quot; — because 'this' refers to obj
+</code></pre>
+</details>
+<details>
+<summary>this in arrow functions vs regular functions</summary>
+<pre><code class="language-JavaScript">function Timer() {
+  this.seconds = 0;
+
+  // ❌ non-strict mode -&gt; 'this' points to the global object
+  // ❌ strict mode -&gt; 'this' is undefined
+  setInterval(function () {
+    this.seconds++;
+    console.log(&quot;Regular:&quot;, this.seconds); // undefined or NaN
+  }, 1000);
+
+  // ✅ Arrow function — 'this' is inherited from Timer
+  setInterval(() =&gt; {
+    this.seconds++;
+    console.log(&quot;Arrow:&quot;, this.seconds); // 1, 2, 3, ...
+  }, 1000);
+}
+
+new Timer();
+</code></pre>
+</details>
+<details>
+<summary>What is Promise?</summary>
+<p>A <strong>Promise</strong> is a JavaScript object that represents the <strong>future result</strong> of an asynchronous operation — it may succeed (<code>resolve</code>), fail (<code>reject</code>), or still be pending.</p>
+<p>⭐ Promise = a placeholder for a future value.</p>
+<pre><code class="language-JavaScript">const promise = new Promise((resolve, reject) =&gt; {
+  const success = true; // Simulate success or failure
+
+  if (success) resolve(&quot;✅ Success&quot;);
+  else reject(&quot;❌ Error&quot;);
+});
+
+promise
+  .then(result =&gt; console.log(result)) // &quot;✅ Success&quot; if resolved
+  .catch(error =&gt; console.log(error)); // &quot;❌ Error&quot; if rejected
+</code></pre>
+</details>
+<details>
+<summary>What is async/await?</summary>
+<p><code>async</code> and <code>await</code> are <strong>syntax built on top of Promises</strong> that make asynchronous code easier to read and write — like synchronous code.</p>
+</details>
+<details>
+<summary>What are Generators?</summary>
+<p><strong>Generator</strong> - function that stops and resumes like a series of checkpoints.</p>
+<pre><code class="language-JavaScript">function* generatorFunc() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generatorFunc();
+console.log(gen.next()); // { value: 1, done: false }
+console.log(gen.next()); // { value: 2, done: false }
+console.log(gen.next()); // { value: 3, done: false }
+console.log(gen.next()); // { value: undefined, done: true }
+</code></pre>
+</details>
+<details>
+<summary>How does the JS transpilation process work?</summary>
+<p><strong>Transpilation</strong> is the process of converting modern JavaScript (e.g. ES6+) into an older, compatible version (like ES5) so it runs in older browsers.</p>
+<p>🔧 The most common tool for this is <strong>Babel</strong>.</p>
+</details>
+<details>
+<summary>What is closure?</summary>
+<p>A <strong>closure</strong> is a function remembers its outer variables even if it’s called later.</p>
+<p>⭐ Closure = mini-class with hidden memory.</p>
+<pre><code class="language-JavaScript">function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    console.log(counter);
+  };
+}
+
+const count = outer(); // outer() runs, returns inner()
+count(); // 1
+count(); // 2
+</code></pre>
+</details>
+<details>
+<summary>What is an Object Prototype in JavaScript?</summary>
+<p><strong>Prototype</strong> in JS ≈ base class in C#, but more flexible and dynamic.</p>
+<p>When you access a property or method like <code>obj.something</code>, JavaScript:</p>
+<ol>
+<li>Looks for <code>something</code> on <code>obj</code> itself.</li>
+<li>If not found, it looks at <code>obj.__proto__</code> (its prototype).</li>
+<li>If still not found, it looks at the prototype’s prototype.</li>
+<li>...and so on until it reaches <code>null</code>.</li>
+</ol>
+</details>
+
+            </div>
+          </div>
+
+          <div class="content-table-block">
+            <div class="content-table-container">
+              <ul id="content-table" class="content-table"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../tree.js"></script>
+  <script src="../../assets/core/core.js"></script>
+  <script src="../../assets/plugins/code/plugin.js"></script>
+<script src="../../assets/plugins/prism/plugin.js"></script>
+<script src="../../assets/plugins/slider/plugin.js"></script>
+
+</body>
+
+</html>
+

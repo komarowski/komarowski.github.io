@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navigator.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+  <link rel="stylesheet" href="../../assets/core/core.css" />
+  <link rel="stylesheet" href="../../assets/plugins/code/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/prism/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/slider/plugin.css" />
+
+</head>
+
+<body>
+  <header class="site-header flex-container flex-align-center">
+    <div class="flex-container flex-align-center">
+      <div id="btn-menu" class="icon-button icon-button--menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <a class="header-title header-navigation-link" href="../../index.html">Navigator.md</a>
+    </div>
+    <a href="../../help.html" target="_blank" class="icon-button icon-button--help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="main-content flex-container">
+    <div id="sidebar" class="sidebar scroll-container">
+      <div id="nav-tree" data-node="Programming/FAQ/web.html" class="navigation-tree"></div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="text-container">
+        <div class="flex-container">
+          <div class="content-block">
+            <div id="markdown" class="markdown">
+              <h1 id="web-basics">Web basics</h1>
+<h2 id="http">HTTP</h2>
+<details>
+<summary>What is HTTP?</summary>
+<p>HTTP (Hypertext Transfer Protocol) is the protocol used for communication between a client (like a browser) and a web server.</p>
+<p>🧠 Stateless = each request starts from scratch.</p>
+</details>
+<details>
+<summary>What is the difference between GET and POST requests?</summary>
+<ul>
+<li><p><strong>GET</strong> - fetches data</p>
+<ul>
+<li>Data in <strong>URL</strong>, visible</li>
+<li>Can be <strong>cached, bookmarked</strong>, faster</li>
+<li>✅ Safe to repeat</li>
+</ul>
+</li>
+<li><p><strong>POST</strong></p>
+<ul>
+<li>Data in <strong>body</strong>, hidden</li>
+<li>❌ Not cached/bookmarked</li>
+<li>🚫 May change server state</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>Why use PUT and DELETE instead of just POST?</summary>
+<ul>
+<li><p>Makes your API self-explanatory. You know what the request is doing just by looking at it</p>
+</li>
+<li><p>Easier to test or integrate with tools (browsers, Postman, REST clients)</p>
+</li>
+</ul>
+</details>
+<details>
+<summary>What is CORS (Cross-Origin Resource Sharing)?</summary>
+<p><strong>CORS</strong> is a security feature in browsers that controls <strong>which websites can access resources</strong> from another domain using JavaScript.</p>
+<p>By default, browsers follow the <strong>same-origin policy</strong>.</p>
+<p>⭐ A script on <em><strong>site-a.com</strong></em> can’t make API calls to <em><strong>site-b.com</strong></em> unless <em><strong>site-b.com</strong></em> allows it.</p>
+</details>
+<details>
+<summary>What is the difference between cookies, local storage and session storage?</summary>
+<ul>
+<li><p><strong>Cookies</strong></p>
+<ul>
+<li>📦 Stored: in the browser, sent with every HTTP request</li>
+<li>✅ Good for: authentication, session IDs, shared across tabs</li>
+<li>❌ Downsides: limited size (~4KB), sent with every request</li>
+</ul>
+</li>
+<li><p><strong>Local Storage</strong></p>
+<ul>
+<li>📦 Stored: in the browser</li>
+<li>✅ Good for: store preferences, tokens, theme, or cached data on the client</li>
+<li>❌ Not sent with requests — stays client-side only</li>
+<li>Size: ~5–10 MB</li>
+</ul>
+</li>
+<li><p><strong>Session Storage</strong></p>
+<ul>
+<li>📦 Stored: like local storage, but cleared when tab closes</li>
+<li>✅ Good for: temporary, per-tab state (e.g., form progress or temp data)</li>
+<li>❌ Not shared between tabs/windows</li>
+<li>Size: ~5 MB</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="html">HTML</h2>
+<details>
+<summary>How the browser loads resources?</summary>
+<p>When a browser loads a webpage, it follows this general order:</p>
+<ol>
+<li><p><strong>HTML</strong> is parsed first — the browser reads the document top to bottom.</p>
+</li>
+<li><p><strong>CSS</strong> blocks rendering — page can't be painted until all CSS is loaded and parsed.</p>
+</li>
+<li><p><strong>JavaScript</strong>  can block HTML parsing <strong>unless marked with</strong> <code>defer</code> or <code>async</code>.</p>
+</li>
+<li><p><strong>Images, fonts, and other assets</strong> load later, usually in parallel unless marked as critical (e.g., via <code>preload</code>).</p>
+</li>
+</ol>
+</details>
+<details>
+<summary>How &lt;script&gt; affects loading?</summary>
+<pre><code class="language-html">&lt;!-- Bad: blocks parsing --&gt;
+&lt;!-- At the bottom of &lt;body&gt;, default behaves like defer --&gt;
+&lt;script src=&quot;a.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Better: downloads in parallel, runs after DOM ready --&gt;
+&lt;!-- If multiple defer scripts are used, they execute in order --&gt;
+&lt;script src=&quot;b.js&quot; defer&gt;&lt;/script&gt;
+
+&lt;!-- For non-critical analytics --&gt;
+&lt;!-- Script is downloaded in parallel with HTML parsing --&gt;
+&lt;script src=&quot;c.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+</details>
+<h2 id="css">CSS</h2>
+<details>
+<summary>What is specificity in CSS and how is it calculated?</summary>
+<p>Specificity determines <strong>which CSS rule wins</strong> when multiple rules apply.</p>
+<ol>
+<li><p><strong>Inline styles</strong> - specificity value 1000</p>
+</li>
+<li><p><strong>ID selector #id</strong> - specificity value 100</p>
+</li>
+<li><p><strong>Class .class</strong> - specificity value 10</p>
+</li>
+<li><p><strong>Element div, h1</strong> - specificity value 1</p>
+</li>
+</ol>
+<p>🧠 More specific rules override less specific ones — unless <strong>!important</strong> is used.</p>
+</details>
+<details>
+<summary>What’s the difference between em, rem, and px?</summary>
+<ul>
+<li><p><strong>px</strong> - fixed pixels (absolute size)</p>
+</li>
+<li><p><strong>em</strong> - relative to the font size of the parent</p>
+</li>
+<li><p><strong>rem</strong> - relative to the root (html) font size</p>
+</li>
+</ul>
+<p>🧠  Use <strong>rem</strong> for consistent scaling, <strong>em</strong> for nested flexibility, <strong>px</strong> when exact control is needed</p>
+</details>
+<details>
+<summary>What is the difference between visibility: hidden and display: none?</summary>
+<ul>
+<li><p><strong>visibility: hidden</strong> - element is invisible but still takes up space</p>
+</li>
+<li><p><strong>display: none</strong> - element is removed from the layout entirely</p>
+</li>
+</ul>
+</details>
+<details>
+<summary>Why do we need pseudo-elements in CSS?</summary>
+<p>Pseudo-elements (like <code>::before</code> and <code>::after</code>) let you <strong>insert and style content</strong> in the page <strong>without adding extra HTML</strong>.</p>
+</details>
+<h2 id="networking-concepts">Networking concepts</h2>
+<details>
+<summary>How does your device get an IP address when you connect to the internet?</summary>
+<ul>
+<li><p>Your router gives your device a <strong>private IP</strong>.</p>
+</li>
+<li><p>Your <strong>Internet Service Provider</strong> (internet company) gives your router a <strong>public IP</strong>.</p>
+</li>
+<li><p>The router uses <strong>NAT (Network Address Translation)</strong> to connect your private IPs to the public internet.</p>
+</li>
+</ul>
+</details>
+<details>
+<summary>Can two people in different homes have the same IP address?</summary>
+<p>They can have the <strong>same private IP</strong> (like 192.168.0.10) behind different routers but their <strong>public IPs must be unique</strong> on the internet.</p>
+<p>This uniqueness is managed by ISPs and the global IP allocation system.</p>
+</details>
+<details>
+<summary>What is DNS?</summary>
+<p><strong>DNS (Domain Name System)</strong> translates human-readable domain names (like google.com) into IP addresses (like 142.250.74.206) so browsers can load websites.</p>
+<p>🧠 DNS = domain name to IP translator</p>
+</details>
+<details>
+<summary>What is a CDN?</summary>
+<p>🧠 <strong>CDN (Content Delivery Network)</strong> = global delivery system that brings your content closer to your users.</p>
+</details>
+<details>
+<summary>What’s the difference between VPN and proxy?</summary>
+<ul>
+<li><p><strong>VPN (Virtual Private Network)</strong></p>
+<ul>
+<li>✅ A <strong>program</strong> that runs in the background and routes <strong>all internet traffic</strong> through the <strong>VPN server</strong>. <strong>VPN server</strong> acts as a secure middle point between your device and the internet</li>
+<li>⚡ Best for full privacy, encryption, and secure access across all apps</li>
+</ul>
+</li>
+<li><p><strong>Proxy</strong></p>
+<ul>
+<li>✅ A lightweight <strong>redirect tool</strong> that affects only <strong>selected traffic</strong></li>
+<li>⚡ Best for quick testing, simple IP masking, or bypassing region locks</li>
+</ul>
+</li>
+</ul>
+</details>
+
+            </div>
+          </div>
+
+          <div class="content-table-block">
+            <div class="content-table-container">
+              <ul id="content-table" class="content-table"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../tree.js"></script>
+  <script src="../../assets/core/core.js"></script>
+  <script src="../../assets/plugins/code/plugin.js"></script>
+<script src="../../assets/plugins/prism/plugin.js"></script>
+<script src="../../assets/plugins/slider/plugin.js"></script>
+
+</body>
+
+</html>
+

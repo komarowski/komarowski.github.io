@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navigator.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+  <link rel="stylesheet" href="../../assets/core/core.css" />
+  <link rel="stylesheet" href="../../assets/plugins/code/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/prism/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/slider/plugin.css" />
+
+</head>
+
+<body>
+  <header class="site-header flex-container flex-align-center">
+    <div class="flex-container flex-align-center">
+      <div id="btn-menu" class="icon-button icon-button--menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <a class="header-title header-navigation-link" href="../../index.html">Navigator.md</a>
+    </div>
+    <a href="../../help.html" target="_blank" class="icon-button icon-button--help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="main-content flex-container">
+    <div id="sidebar" class="sidebar scroll-container">
+      <div id="nav-tree" data-node="Programming/FAQ/web_frameworks.html" class="navigation-tree"></div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="text-container">
+        <div class="flex-container">
+          <div class="content-block">
+            <div id="markdown" class="markdown">
+              <h1 id="web-frameworks">Web frameworks</h1>
+<h2 id="react">React</h2>
+<details>
+<summary>What is JSX?</summary>
+<p><strong>JSX</strong> is a syntax that lets you write <strong>HTML-like code inside JavaScript</strong>.</p>
+<p>⭐ It gets converted to regular JavaScript behind the scenes:</p>
+<pre><code class="language-javascript">const element = &lt;h1&gt;Hello&lt;/h1&gt;;
+
+// becomes:
+React.createElement('h1', null, 'Hello');
+</code></pre>
+</details>
+<details>
+<summary>What is State in React?</summary>
+<p><strong>State</strong> is a <strong>JavaScript object</strong> that stores <strong>dynamic data</strong> in a component.</p>
+<p>When state changes, React <strong>automatically re-renders</strong> the component to reflect the new data.</p>
+<p>⭐ In functional components, state is managed using the <code>useState</code> hook:</p>
+<pre><code class="language-javascript">const [count, setCount] = useState(0);
+</code></pre>
+</details>
+<details>
+<summary>How do you pass data between components in React?</summary>
+<p>You pass data from parent to child using <strong>props</strong>. <strong>Props</strong> are <strong>read-only</strong> and let you customize child components.</p>
+<p>⚠️ Downsides of Props</p>
+<ul>
+<li>Only work <strong>top-down</strong></li>
+<li>Can lead to <strong>prop drilling</strong> in deep trees</li>
+</ul>
+<p>🧩 For shared or global data in real apps:</p>
+<ul>
+<li><strong>Context API</strong> lets you <strong>share data between components</strong> without passing props manually at every level</li>
+<li><strong>State managers</strong> – like Redux or Zustand, for complex apps</li>
+</ul>
+</details>
+<details>
+<summary>React Lifecycle in Functional Components</summary>
+<ol>
+<li><strong>Initialization</strong></li>
+</ol>
+<p>You define <strong>initial state</strong> using <code>useState</code> and set up any custom logic or variables.</p>
+<pre><code class="language-javascript">const [count, setCount] = useState(0);
+</code></pre>
+<ol start="2">
+<li><strong>Mounting</strong></li>
+</ol>
+<p>You use <code>useEffect</code> with an empty dependency array <code>[]</code> to run code <strong>only once after the component is added to the DOM</strong>.</p>
+<pre><code class="language-javascript">useEffect(() =&gt; {
+  // runs once after mount
+}, []);
+</code></pre>
+<ol start="3">
+<li><strong>Updating</strong></li>
+</ol>
+<p>If you want to respond to <strong>state or prop changes</strong>, use <code>useEffect</code> with those values in the dependency array.</p>
+<pre><code class="language-javascript">useEffect(() =&gt; {
+  // runs when &quot;count&quot; changes
+}, [count]);
+</code></pre>
+<ol start="4">
+<li><strong>Unmounting</strong></li>
+</ol>
+<p>To clean up, <strong>return</strong> a function inside <code>useEffect</code>. React will call it before the component unmounts.</p>
+<pre><code class="language-javascript">useEffect(() =&gt; {
+  const id = setInterval(() =&gt; { /* ... */ }, 1000);
+  return () =&gt; clearInterval(id); // cleanup
+}, []);
+</code></pre>
+<p><a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="noopener noreferrer">React lifecycle methods diagram</a></p>
+</details>
+<details>
+<summary>What is the Virtual DOM?</summary>
+<p>The <strong>Virtual DOM</strong> is a <strong>lightweight copy</strong> of the real DOM that React keeps in memory.</p>
+<p>When something changes (like state or props), React updates the virtual DOM first — then compares it to the previous version and applies <strong>only the needed changes</strong> to the real DOM.</p>
+<p>❗ This process is called <strong>reconciliation</strong>, and it helps React <strong>update the UI efficiently</strong>.</p>
+<p>⭐ The virtual DOM is made up of <strong>React elements</strong> (simple JS objects). This makes React <strong>fast and efficient</strong>, especially compared to manipulating the DOM directly, which is much slower.</p>
+</details>
+<details>
+<summary>What is the key attribute when rendering lists in React?</summary>
+<p>The <code>key</code> helps React <strong>identify which items in a list have changed, been added, or removed</strong>.</p>
+<p>💡 <strong>Avoid using the index</strong> as a key. It can break component state or cause wrong rendering when the list changes order.</p>
+</details>
+<details>
+<summary>What are hooks in React?</summary>
+<p><strong>Hoooks</strong> are a simpler way to use <strong>state and lifecycle logic</strong> in <strong>function components</strong>.</p>
+<p>They allow you to write <strong>less code</strong>, avoid <code>this</code>, and keep logic <strong>closer to the data it works with</strong>.</p>
+</details>
+<h2 id="angular">Angular</h2>
+<details>
+<summary>What is Angular and how is it different from React?</summary>
+<ul>
+<li><p><strong>Angular</strong> is a <strong>full framework</strong> with built-in tools like routing, forms. It uses TypeScript by default, has two-way binding, and a structured, opinionated setup.</p>
+</li>
+<li><p><strong>React</strong> is a <strong>UI library</strong> that focuses only on building components — you need extra libraries for other features. It's more flexible, uses one-way data flow, and has a simpler core.</p>
+</li>
+</ul>
+</details>
+<details>
+<summary>What are components, and how do they communicate with each other?</summary>
+<p><strong>Components</strong> are the <strong>building blocks</strong> of an Angular app. Each component has <strong>HTML template</strong>, <strong>TypeScript file</strong> for logic, and optional <strong>CSS styles</strong>.</p>
+<pre><code class="language-javascript">// hello.component.ts
+@Component({
+  selector: 'app-hello',
+  template: `&lt;h1&gt;Hello {{ name }}&lt;/h1&gt;`
+})
+export class HelloComponent {
+  name = 'John';
+}
+
+// It's used as:
+// &lt;app-hello&gt;&lt;/app-hello&gt;
+</code></pre>
+</details>
+<details>
+<summary>What are lifecycle hooks in Angular?</summary>
+<p><strong>Lifecycle hooks</strong> are special methods that Angular calls at different stages of a component’s life — from creation to destruction.</p>
+<pre><code class="language-javascript">@Component({
+  selector: 'app-status',
+  template: `&lt;p&gt;Status: {{ status }}&lt;/p&gt;`
+})
+export class StatusComponent implements OnInit, OnChanges, OnDestroy {
+  @Input() status: string;
+
+  // Runs when component is first added to the page
+  ngOnInit() {
+    console.log('Component created');
+  }
+
+  // Runs whenever the @Input() value changes
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Input changed:', changes.status.currentValue);
+  }
+
+  // Runs when the component is about to be removed
+  ngOnDestroy() {
+    console.log('Component destroyed');
+  }
+}
+</code></pre>
+</details>
+<details>
+<summary>What is two-way data binding in Angular?</summary>
+<p><strong>Two-way data binding</strong> means the value in your <strong>component’s code</strong> and the <strong>input field</strong> stay in sync — when one changes, the other updates automatically.</p>
+<p>Angular uses the <code>[(ngModel)]</code> syntax for this:</p>
+<pre><code class="language-html">&lt;input [(ngModel)]=&quot;name&quot; /&gt;
+</code></pre>
+<p>To make this work, <code>name</code> must be defined in the component’s TypeScript file:</p>
+<pre><code class="language-javascript">export class AppComponent {
+  name = 'John';
+}
+</code></pre>
+</details>
+<details>
+<summary>What are services and dependency injection in Angular?</summary>
+<ul>
+<li><p><strong>Services</strong> in Angular are classes used to hold <strong>shared logic or data</strong> — like fetching from an API or storing user info. You create a service using the <code>@Injectable()</code> decorator.</p>
+</li>
+<li><p>Angular uses <strong>dependency injection (DI)</strong> to automatically <strong>create and provide services</strong> wherever they’re needed.</p>
+</li>
+</ul>
+<p>📄 <strong>user.service.ts</strong></p>
+<pre><code class="language-javascript">@Injectable({ providedIn: 'root' }) // Global singleton
+export class UserService {
+  getUserName() {
+    return 'John';
+  }
+}
+</code></pre>
+<p>📄  <strong>app.component.ts</strong></p>
+<pre><code class="language-javascript">constructor(private userService: UserService) {}
+
+ngOnInit() {
+  const name = this.userService.getUserName();
+}
+</code></pre>
+<p>🧠 By default, services are <strong>singletons</strong>, meaning one shared instance across the entire app. However, they can also be <strong>component-level</strong> or <strong>module-level</strong>.</p>
+</details>
+<details>
+<summary>What is a module in Angular and why is it important?</summary>
+<p>An Angular module (<code>NgModule</code>) is a way to <strong>group related parts of your app</strong> — like components, services, and pipes — into a single unit. Every app starts with one root module: <code>AppModule</code>.</p>
+<p>🧪 Imagine a large app like an <strong>e-commerce site</strong>. You can create:</p>
+<ul>
+<li><code>AuthModule</code> – login, register, forgot password</li>
+<li><code>ProductModule</code> – product list, product details, filters</li>
+<li><code>AdminModule</code> – admin dashboard, reports</li>
+</ul>
+<p>Each module can be loaded as needed, have its own routes and services, which simplifies testing and management.</p>
+</details>
+
+            </div>
+          </div>
+
+          <div class="content-table-block">
+            <div class="content-table-container">
+              <ul id="content-table" class="content-table"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../tree.js"></script>
+  <script src="../../assets/core/core.js"></script>
+  <script src="../../assets/plugins/code/plugin.js"></script>
+<script src="../../assets/plugins/prism/plugin.js"></script>
+<script src="../../assets/plugins/slider/plugin.js"></script>
+
+</body>
+
+</html>
+

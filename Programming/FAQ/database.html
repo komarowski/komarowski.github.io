@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navigator.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+  <link rel="stylesheet" href="../../assets/core/core.css" />
+  <link rel="stylesheet" href="../../assets/plugins/code/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/prism/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/slider/plugin.css" />
+
+</head>
+
+<body>
+  <header class="site-header flex-container flex-align-center">
+    <div class="flex-container flex-align-center">
+      <div id="btn-menu" class="icon-button icon-button--menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <a class="header-title header-navigation-link" href="../../index.html">Navigator.md</a>
+    </div>
+    <a href="../../help.html" target="_blank" class="icon-button icon-button--help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="main-content flex-container">
+    <div id="sidebar" class="sidebar scroll-container">
+      <div id="nav-tree" data-node="Programming/FAQ/database.html" class="navigation-tree"></div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="text-container">
+        <div class="flex-container">
+          <div class="content-block">
+            <div id="markdown" class="markdown">
+              <h1 id="database">Database</h1>
+<h2 id="sql-server">SQL Server</h2>
+<details>
+<summary>What is the difference between primary key and unique constraints?</summary>
+<ul>
+<li><p>Primary Key:</p>
+<ul>
+<li>No <code>NULL</code> allowed</li>
+<li>Only one per table</li>
+<li>Creates a clustered index by default</li>
+<li>Used as the main ID of the row</li>
+</ul>
+</li>
+<li><p>Unique Constraint:</p>
+<ul>
+<li>Allows <code>NULL</code> values</li>
+<li>You can have many in one table</li>
+<li>Creates a non-clustered index</li>
+<li>Used to keep other columns unique (like email)</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>What is the difference between UNION and JOIN?</summary>
+<ul>
+<li><code>UNION</code> - combines rows from two queries with the same number of columns. Removes duplicates by default (<code>UNION ALL</code> keeps all rows).</li>
+<li><code>JOIN</code> - combines columns from two or more tables based on related keys.</li>
+</ul>
+</details>
+<details>
+<summary>Function vs. Stored Procedure</summary>
+<ul>
+<li><p><strong>Function</strong> returns a single value or table.</p>
+<ul>
+<li>✅ Usable in SELECT, WHERE, JOIN, etc.</li>
+<li>❌ Cannot modify data (INSERT, UPDATE, etc.)</li>
+<li>⭐ It's meant for computations and reusable expressions inside queries</li>
+</ul>
+</li>
+<li><p><strong>Stored Procedure</strong> runs a block of SQL to perform actions like inserts, updates, logic, etc.</p>
+<ul>
+<li>❌ Cannot be used directly in a query (SELECT)</li>
+<li>✅ Can modify data, use IF, loops, transactions</li>
+<li>✅ Precompiled and stored in SQL Server’s cache</li>
+<li>⚡ Often performs better for complex logic and batch operations</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>Index Design: Key Considerations</summary>
+<ol>
+<li><p><strong>Have one clustered index per table</strong></p>
+<ul>
+<li>This defines the <strong>physical sort order</strong> of rows.</li>
+<li>Usually placed on the <strong>primary key</strong> or a column often used in range queries or joins.</li>
+</ul>
+</li>
+<li><p><strong>Use non-clustered indexes carefully</strong></p>
+<ul>
+<li>✅ Improves SELECT performance for specific queries.</li>
+<li>❌ Slows down INSERT, UPDATE, DELETE because the indexes must be updated too.</li>
+</ul>
+</li>
+<li><p><strong>High-selectivity columns (many unique values, like Email, OrderID)</strong></p>
+<ul>
+<li>✅ Good for indexes — filters out rows efficiently</li>
+</ul>
+</li>
+<li><p><strong>Low selectivity (few unique values, like Gender, Status, Yes/No)</strong></p>
+<ul>
+<li>❌ Bad for indexes — too many rows match, so SQL may scan the whole table anyway</li>
+</ul>
+</li>
+</ol>
+</details>
+<details>
+<summary>Difference between clustered and nonclustered indexes</summary>
+<ul>
+<li><p><strong>Clustered Index</strong></p>
+<ul>
+<li>✅ Data rows are physically sorted by the indexed column(s). Stores the actual data at the leaf level.</li>
+<li>❗ Only one per table (because rows can be stored only one way).</li>
+</ul>
+</li>
+<li><p><strong>Nonclustered Index</strong></p>
+<ul>
+<li>✅ Data rows stay in their original order. Stores pointers to a row ID or to the clustered key.</li>
+<li>❗ Multiple nonclustered indexes can be created.</li>
+</ul>
+</li>
+</ul>
+<p>⭐ If <strong>OrderDate</strong> is a clustered index, then the physical rows in the <strong>Orders</strong> table are already sorted by <strong>OrderDate</strong>.</p>
+<pre><code class="language-sql">SELECT * FROM Orders
+WHERE OrderDate BETWEEN '2024-01-01' AND '2024-01-31';
+
+-- Jump directly to the first matching date
+-- Stop as soon as dates go beyond 2024-01-31
+</code></pre>
+<p>⭐ There's a nonclustered index on <strong>Email</strong>.</p>
+<pre><code class="language-sql">SELECT * FROM Users WHERE Email = 'a@b.com';
+
+-- It stores a copy of the indexed column(s) in sorted order 
+-- plus a pointer to the actual row.
+</code></pre>
+</details>
+<details>
+<summary>What is Normalization?</summary>
+<p><strong>Normalization</strong> means organizing your database to:</p>
+<ul>
+<li>Avoid repeating the same data</li>
+<li>Make updates easier and cleaner</li>
+</ul>
+</details>
+<details>
+<summary>What is a Schema?</summary>
+<p>A <strong>schema</strong> is like a folder inside a database that groups related objects (tables, views, procedures, etc.).
+It defines ownership and security and helps manage access.</p>
+</details>
+<details>
+<summary>What is a Transaction?</summary>
+<p>A <strong>transaction</strong> keeps your changes safe — either everything applies, or nothing does.</p>
+<p>⭐ This ensures money is only transferred if both updates succeed.</p>
+<pre><code class="language-sql">BEGIN TRANSACTION;
+
+UPDATE Accounts SET Balance = Balance - 100 WHERE Id = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE Id = 2;
+
+IF @@ERROR &lt;&gt; 0
+    ROLLBACK TRANSACTION;
+ELSE
+    COMMIT TRANSACTION;
+</code></pre>
+</details>
+<h2 id="nosql">NoSQL</h2>
+<details>
+<summary>What do you understand by NoSQL?</summary>
+<p><strong>NoSQL</strong> refers to databases that don't use traditional relational table structures.</p>
+<p>Instead, they store data in flexible formats like:</p>
+<ul>
+<li><strong>Documents</strong> - <strong>MongoDB</strong> for storing user profiles or JSON-like documents</li>
+<li><strong>Key-value pairs</strong> - <strong>Redis</strong> for fast key-value caching</li>
+<li><strong>Graphs</strong> - <strong>Neo4j</strong> for social network data (relationships between people)</li>
+</ul>
+</details>
+<details>
+<summary>When you should use NoSQL in place of the normal database?</summary>
+<p>🧠 Use SQL by default. Use NoSQL for specific use cases:</p>
+<ul>
+<li><p>Use <strong>MongoDB</strong> when data structure changes often and you store data as JSON<br />
+⭐ A product catalog with different specs for each product.</p>
+</li>
+<li><p>Use <strong>Redis</strong> if very fast reads/writes needed<br />
+⭐ A game leaderboard that updates in real time</p>
+</li>
+<li><p>Use <strong>Cassandra</strong> for massive amounts of data<br />
+⭐ Click tracking on a website with millions of users</p>
+</li>
+</ul>
+</details>
+
+            </div>
+          </div>
+
+          <div class="content-table-block">
+            <div class="content-table-container">
+              <ul id="content-table" class="content-table"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../tree.js"></script>
+  <script src="../../assets/core/core.js"></script>
+  <script src="../../assets/plugins/code/plugin.js"></script>
+<script src="../../assets/plugins/prism/plugin.js"></script>
+<script src="../../assets/plugins/slider/plugin.js"></script>
+
+</body>
+
+</html>
+

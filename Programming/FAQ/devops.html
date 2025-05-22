@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navigator.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+  <link rel="stylesheet" href="../../assets/core/core.css" />
+  <link rel="stylesheet" href="../../assets/plugins/code/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/prism/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/slider/plugin.css" />
+
+</head>
+
+<body>
+  <header class="site-header flex-container flex-align-center">
+    <div class="flex-container flex-align-center">
+      <div id="btn-menu" class="icon-button icon-button--menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <a class="header-title header-navigation-link" href="../../index.html">Navigator.md</a>
+    </div>
+    <a href="../../help.html" target="_blank" class="icon-button icon-button--help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="main-content flex-container">
+    <div id="sidebar" class="sidebar scroll-container">
+      <div id="nav-tree" data-node="Programming/FAQ/devops.html" class="navigation-tree"></div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="text-container">
+        <div class="flex-container">
+          <div class="content-block">
+            <div id="markdown" class="markdown">
+              <h1 id="devops">Devops</h1>
+<h2 id="docker">Docker</h2>
+<details>
+<summary>What is Docker and why is it useful?</summary>
+<p><strong>Docker</strong> is a tool that lets you package an application with all its dependencies into a container, so it can run the same way on any machine.</p>
+<p>⭐ This starts a PostgreSQL server without needing to install anything on your system - just the Docker engine.</p>
+<pre><code class="language-cmd">docker run -d -p 5432:5432 postgres
+</code></pre>
+</details>
+<details>
+<summary>How do Dockerfile, Docker image, and container relate to each other?</summary>
+<ul>
+<li><p>A <strong>Dockerfile</strong> is a simple text file with instructions for building a Docker image — like which base system to use, what files to copy, and how to run the app.</p>
+</li>
+<li><p>When you build a Dockerfile, it creates a <strong>Docker image</strong> — a snapshot of the app with everything it needs: code, dependencies, OS files.</p>
+</li>
+<li><p>A <strong>container</strong> is what you get when you run that image — it's the live, running version of the app, isolated from your system.</p>
+</li>
+</ul>
+</details>
+<details>
+<summary>How Docker works?</summary>
+<ol>
+<li><p><strong>Install Docker</strong> – This sets up the <strong>Docker engine</strong>, a lightweight tool that runs containers on your system.</p>
+</li>
+<li><p><strong>Build a Docker image</strong> – Use a <strong>Dockerfile</strong> to define your app and its environment.</p>
+</li>
+<li><p><strong>Run containers from the image</strong> – You can start <strong>multiple isolated containers</strong> from the same image.
+Also, you can run a Node.js server in one container and a PostgreSQL database in another — all at the same time, for testing your app.</p>
+</li>
+</ol>
+</details>
+<h2 id="teamcity">TeamCity</h2>
+<details>
+<summary>What is TeamCity used for?</summary>
+<p><strong>TeamCity</strong> is used to <strong>automate the software delivery process</strong>. It can pull code from a repository, build the app, run tests, and deploy the result. It helps ensure that changes are tested and integrated regularly.</p>
+</details>
+<details>
+<summary>How TeamCity works?</summary>
+<ol>
+<li><p><strong>TeamCity Server</strong> is the central control unit.</p>
+<ul>
+<li>It manages projects, build configurations, build history, user permissions, and UI.</li>
+<li>It queues builds, stores logs, and controls agents.</li>
+</ul>
+</li>
+<li><p><strong>Build Agents</strong> are the machines (can be physical, virtual, or Docker containers) that <strong>actually run the builds</strong>.</p>
+<ul>
+<li>Each agent has a list of capabilities (e.g., .NET SDK, Node.js, Docker).</li>
+<li>The server sends a build job to an <strong>idle agent</strong> that matches the build requirements.</li>
+</ul>
+</li>
+<li><p><strong>Version Control System (VCS) Integration</strong></p>
+<ul>
+<li>TeamCity connects to Git, GitHub, Azure DevOps, etc.</li>
+<li>It checks for changes based on configured <strong>VCS roots</strong>.</li>
+<li>A <strong>VCS trigger</strong> can start a build automatically when new code is pushed.</li>
+</ul>
+</li>
+<li><p><strong>Build Configuration</strong> - each configuration contains:</p>
+<ul>
+<li><strong>Steps</strong> (e.g., <code>npm install</code>, <code>dotnet build</code>, <code>docker build</code>)</li>
+<li><strong>Triggers</strong> (e.g., VCS change, schedule)</li>
+<li><strong>Parameters</strong> (e.g., environment names, secrets)</li>
+<li><strong>Artifact rules</strong> to store outputs</li>
+</ul>
+</li>
+<li><p><strong>Build Process</strong></p>
+<ul>
+<li>When triggered, the server selects an agent and sends the build instructions.</li>
+<li>The agent clones the repo, executes build steps, collects test results, and sends data back to the server.</li>
+<li>Artifacts (like compiled files or Docker images) are saved for download or further deployment.</li>
+</ul>
+</li>
+</ol>
+</details>
+
+            </div>
+          </div>
+
+          <div class="content-table-block">
+            <div class="content-table-container">
+              <ul id="content-table" class="content-table"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../tree.js"></script>
+  <script src="../../assets/core/core.js"></script>
+  <script src="../../assets/plugins/code/plugin.js"></script>
+<script src="../../assets/plugins/prism/plugin.js"></script>
+<script src="../../assets/plugins/slider/plugin.js"></script>
+
+</body>
+
+</html>
+

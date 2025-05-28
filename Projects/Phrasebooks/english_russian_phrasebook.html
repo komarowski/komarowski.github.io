@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navigator.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+  <link rel="stylesheet" href="../../assets/core/core.css" />
+  <link rel="stylesheet" href="../../assets/plugins/code/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/prism/plugin.css" />
+<link rel="stylesheet" href="../../assets/plugins/slider/plugin.css" />
+
+</head>
+
+<body>
+  <header class="site-header flex-container flex-align-center">
+    <div class="flex-container flex-align-center">
+      <div id="btn-menu" class="icon-button icon-button--menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <a class="header-title header-navigation-link" href="../../index.html">Navigator.md</a>
+    </div>
+    <a href="../../help.html" target="_blank" class="icon-button icon-button--help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="main-content flex-container">
+    <div id="sidebar" class="sidebar scroll-container">
+      <div id="nav-tree" data-node="Projects/Phrasebooks/english_russian_phrasebook.html" class="navigation-tree"></div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="text-container">
+        <div class="flex-container">
+          <div class="content-block">
+            <div id="markdown" class="markdown">
+              <h1 id="english-russian">English-russian</h1>
+<style>
+.phrase-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.phrase-text {
+  flex: 1;
+}
+
+.emoji-tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 0px !important;
+  overflow: unset !important;
+  padding: 1px 2px !important;
+  box-shadow: none !important;
+}
+
+.emoji-tooltip summary {
+  list-style: none;       /* hide default triangle */
+  cursor: pointer;
+}
+
+.emoji-tooltip summary::-webkit-details-marker {
+  display: none;          /* Chrome/Safari triangle */
+}
+
+.tooltip-content {
+  position: absolute;
+  top: 29px;
+  left: 60px;
+  min-width: 120px;
+  transform: translateX(-50%);
+  background: #303b44;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.phrase-actions {
+  display: flex;
+}
+
+.phrase-actions .lang-toggle,
+.phrase-actions .lang-play {
+  border: none;
+}
+
+.lang-play {
+	width: 26px;
+height: 26px;
+min-width: 26px;
+min-height: 26px;
+cursor: pointer;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='26px' viewBox='0 -960 960 960' width='26px' fill='%231b657e'><path d='m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>") center no-repeat;
+}
+
+.lang-toggle {
+	padding-left: 25px;       
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+cursor: pointer;
+}
+
+.lang-toggle.ru {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231b657e'><path d='M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm200-120Z'/></svg>") no-repeat;
+}
+
+.lang-toggle.en {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231b657e'><path d='M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm400-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM480-480Z'/></svg>") no-repeat;
+}
+
+.lang-toggle .lang-label {
+  color: #1b657e;
+  font-weight: bold;
+  display: inline;
+}
+
+tr.lang-ru {
+  background-color: #e7ecf1 !important;;
+  transition: background-color 0.2s ease;
+}
+
+.markdown table tr:nth-child(2n), thead {
+    background-color: #fff;
+}
+
+</style>
+<div class="tab-container">
+<input class="tab-input" name="topics" type="radio" id="topics-1" checked="checked"/>
+<label class="tab-label" for="topics-1">🛍️ Shopping</label>
+<div class="tab-panel">
+<h3 id="buying-clothes">1 Buying Clothes</h3>
+<table>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                Hello! I’m looking for a 
+                <details class="emoji-tooltip">
+                <summary>shirt 👕</summary>
+                <div class="tooltip-content"><strong>Рубашка</strong> — /ʃɜːrt/ — a garment for the upper body with a collar and sleeves.</div>
+                </details> and a 
+                <details class="emoji-tooltip">
+                <summary>jacket 🧥</summary>
+                <div class="tooltip-content"><strong>Куртка</strong> — /ˈdʒækɪt/ — outerwear for cool weather.</div>
+                </details>.
+            </div>
+            <div class="ru" style="display: none;">
+                Здравствуйте! Я ищу 
+                <details class="emoji-tooltip">
+                <summary>рубашку 👕</summary>
+                <div class="tooltip-content"><strong>Shirt</strong> — /ʃɜːrt/ — одежда для верхней части тела с воротником и рукавами.</div>
+                </details> и 
+                <details class="emoji-tooltip">
+                <summary>куртку 🧥</summary>
+                <div class="tooltip-content"><strong>Jacket</strong> — /ˈdʒækɪt/ — верхняя одежда для прохладной погоды.</div>
+                </details>.
+            </div>
+          </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase1.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                🤖 Sure! We have many in 
+                <details class="emoji-tooltip">
+                <summary>red 🔴</summary>
+                <div class="tooltip-content"><strong>Красный</strong> — /red/ — the color of strawberries.</div>
+                </details> and 
+                <details class="emoji-tooltip">
+                <summary>blue 🔵</summary>
+                <div class="tooltip-content"><strong>Синий</strong> — /bluː/ — the color of the sky.</div>
+                </details>.
+            </div>
+            <div class="ru" style="display: none;">
+                🤖 Конечно! У нас есть много в 
+                <details class="emoji-tooltip">
+                <summary>красном 🔴</summary>
+                <div class="tooltip-content"><strong>Red</strong> — /red/ — цвет клубники.</div>
+                </details> и 
+                <details class="emoji-tooltip">
+                <summary>синем 🔵</summary>
+                <div class="tooltip-content"><strong>Blue</strong> — /bluː/ — цвет неба.</div>
+                </details>.
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase2.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+</table>
+<h3 id="at-the-register">2 At the Register</h3>
+<table>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                Can I pay by 
+                <details class="emoji-tooltip">
+                <summary>card 💳</summary>
+                <div class="tooltip-content">Карта — /kɑːrd/ — plastic payment method.</div>
+                </details> or 
+                <details class="emoji-tooltip">
+                <summary>cash 💵</summary>
+                <div class="tooltip-content">Наличные — /kæʃ/ — physical money in bills or coins.</div>
+                </details>?
+            </div>
+            <div class="ru" style="display: none;">
+                Можно оплатить 
+                <details class="emoji-tooltip">
+                <summary>картой 💳</summary>
+                <div class="tooltip-content">Card — /kɑːrd/ — пластиковый способ оплаты.</div>
+                </details> или 
+                <details class="emoji-tooltip">
+                <summary>наличными 💵</summary>
+                <div class="tooltip-content">Cash — /kæʃ/ — физические деньги.</div>
+                </details>?
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase3.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                🤖 Of course! Please enter your 
+                <details class="emoji-tooltip">
+                <summary>PIN 🔢</summary>
+                <div class="tooltip-content">ПИН-код — /pɪn/ — a personal identification number for card payments.</div>
+                </details> and take your 
+                <details class="emoji-tooltip">
+                <summary>receipt 🧾</summary>
+                <div class="tooltip-content">Чек — /rɪˈsiːt/ — printed proof of payment.</div>
+                </details>.
+            </div>
+            <div class="ru" style="display: none;">
+                🤖 Конечно! Введите 
+                <details class="emoji-tooltip">
+                <summary>ПИН-код 🔢</summary>
+                <div class="tooltip-content">PIN — /pɪn/ — персональный код для оплаты.</div>
+                </details> и возьмите 
+                <details class="emoji-tooltip">
+                <summary>чек 🧾</summary>
+                <div class="tooltip-content">Receipt — /rɪˈsiːt/ — бумажное подтверждение оплаты.</div>
+                </details>.
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase4.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+</table>
+<h3 id="asking-for-help-with-size-and-fit">3 Asking for Help with Size and Fit</h3>
+<table>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                Excuse me, do you have this 
+                <details class="emoji-tooltip">
+                <summary>dress 👗</summary>
+                <div class="tooltip-content">Платье — /drɛs/ — a one-piece garment worn by women.</div>
+                </details> in 
+                <details class="emoji-tooltip">
+                <summary>size 🔢</summary>
+                <div class="tooltip-content">Размер — /saɪz/ — a standard for fitting clothing.</div>
+                </details> M?
+            </div>
+            <div class="ru" style="display: none;">
+                Простите, у вас есть это 
+                <details class="emoji-tooltip">
+                <summary>платье 👗</summary>
+                <div class="tooltip-content">Dress — /drɛs/ — женская одежда из одного куска.</div>
+                </details> в 
+                <details class="emoji-tooltip">
+                <summary>размере 🔢</summary>
+                <div class="tooltip-content">Size — /saɪz/ — стандарт размера одежды.</div>
+                </details> M?
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase5.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                🤖 Let me check in the 
+                <details class="emoji-tooltip">
+                <summary>stock 📦</summary>
+                <div class="tooltip-content">Склад — /stɒk/ — storage area where items are kept before sale.</div>
+                </details>. One moment, please.
+            </div>
+            <div class="ru" style="display: none;">
+                🤖 Сейчас проверю на 
+                <details class="emoji-tooltip">
+                <summary>складе 📦</summary>
+                <div class="tooltip-content">Stock — /stɒk/ — место хранения товаров перед продажей.</div>
+                </details>. Минутку, пожалуйста.
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase6.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                Can I try it on in the 
+                <details class="emoji-tooltip">
+                <summary>changing room 🚪</summary>
+                <div class="tooltip-content">Примерочная — /ˈʧeɪndʒɪŋ ruːm/ — a place to try on clothes.</div>
+                </details>?
+            </div>
+            <div class="ru" style="display: none;">
+                Можно примерить в 
+                <details class="emoji-tooltip">
+                <summary>примерочной 🚪</summary>
+                <div class="tooltip-content">Changing room — /ˈʧeɪndʒɪŋ ruːm/ — место для примерки одежды.</div>
+                </details>?
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase7.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                🤖 Yes, it's over there next to the 
+                <details class="emoji-tooltip">
+                <summary>mirror</summary>
+                <div class="tooltip-content">Зеркало — /ˈmɪrər/ — a surface that reflects your image.</div>
+                </details>.
+            </div>
+            <div class="ru" style="display: none;">
+                🤖 Да, она вон там, рядом с 
+                <details class="emoji-tooltip">
+                <summary>зеркалом</summary>
+                <div class="tooltip-content">Mirror — /ˈmɪrər/ — поверхность, отражающая ваше изображение.</div>
+                </details>.
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase8.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+</table>
+</div>
+<input class="tab-input" name="topics" type="radio" id="topics-2"/>
+<label class="tab-label" for="topics-2">🍽 Food</label>
+<div class="tab-panel">
+<h3 id="at-a-restaurant">1 At a Restaurant</h3>
+<table>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                I'd like a 
+                <details class="emoji-tooltip">
+                <summary>table 🍽️</summary>
+                <div class="tooltip-content">Столик — /ˈteɪbəl/ — a flat surface to sit and eat at.</div>
+                </details> for two, please.
+            </div>
+            <div class="ru" style="display: none;">
+                Я бы хотел 
+                <details class="emoji-tooltip">
+                <summary>столик 🍽️</summary>
+                <div class="tooltip-content">Table — /ˈteɪbəl/ — место, где сидят и едят.</div>
+                </details> на двоих, пожалуйста.
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase9.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                Can I see the 
+                <details class="emoji-tooltip">
+                <summary>menu 📜</summary>
+                <div class="tooltip-content">Меню — /ˈmenjuː/ — a list of food and drink options.</div>
+                </details>, please?
+            </div>
+            <div class="ru" style="display: none;">
+                Можно посмотреть 
+                <details class="emoji-tooltip">
+                <summary>меню 📜</summary>
+                <div class="tooltip-content">Menu — /ˈmenjuː/ — список блюд и напитков.</div>
+                </details>, пожалуйста?
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase10.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+        <div class="en">
+            🤖 Of course! Would you like some 
+            <details class="emoji-tooltip">
+            <summary>water 💧</summary>
+            <div class="tooltip-content">Вода — /ˈwɔːtər/ — a clear drink for refreshment.</div>
+            </details> while you wait?
+        </div>
+        <div class="ru" style="display: none;">
+            🤖 Конечно! Хотите 
+            <details class="emoji-tooltip">
+            <summary>воды 💧</summary>
+            <div class="tooltip-content">Water — /ˈwɔːtər/ — прозрачный напиток для утоления жажды.</div>
+            </details>, пока ждёте?
+        </div>
+        </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase11.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+</table>
+<h3 id="ordering-food">2 Ordering Food</h3>
+<table>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+            <div class="en">
+                I’ll have a 
+                <details class="emoji-tooltip">
+                <summary>salad 🥗</summary>
+                <div class="tooltip-content">Салат — /ˈsæləd/ — a cold dish of vegetables or greens.</div>
+                </details> and a 
+                <details class="emoji-tooltip">
+                <summary>juice 🧃</summary>
+                <div class="tooltip-content">Сок — /dʒuːs/ — a drink made from fruit or vegetables.</div>
+                </details>, please.
+            </div>
+            <div class="ru" style="display: none;">
+                Мне, пожалуйста, 
+                <details class="emoji-tooltip">
+                <summary>салат 🥗</summary>
+                <div class="tooltip-content">Salad — /ˈsæləd/ — холодное блюдо из овощей или зелени.</div>
+                </details> и 
+                <details class="emoji-tooltip">
+                <summary>сок 🧃</summary>
+                <div class="tooltip-content">Juice — /dʒuːs/ — напиток из фруктов или овощей.</div>
+                </details>.
+            </div>
+            </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase12.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="phrase-row" data-lang="en">
+          <div class="phrase-text">
+        <div class="en">
+            Can I also get a 
+            <details class="emoji-tooltip">
+            <summary>cup ☕</summary>
+            <div class="tooltip-content">Чашка — /kʌp/ — a small container for hot drinks.</div>
+            </details> of 
+            <details class="emoji-tooltip">
+            <summary>tea 🍵</summary>
+            <div class="tooltip-content">Чай — /tiː/ — a hot drink made from tea leaves.</div>
+            </details>?
+        </div>
+        <div class="ru" style="display: none;">
+            Можно ещё 
+            <details class="emoji-tooltip">
+            <summary>чашку ☕</summary>
+            <div class="tooltip-content">Cup — /kʌp/ — небольшой сосуд для горячих напитков.</div>
+            </details> 
+            <details class="emoji-tooltip">
+            <summary>чая 🍵</summary>
+            <div class="tooltip-content">Tea — /tiː/ — горячий напиток из чайных листьев.</div>
+            </details>?
+        </div>
+        </div>
+          <div class="phrase-actions">
+            <button class="lang-toggle ru">
+              <span class="lang-label">RU</span>
+            </button>
+            <button class="lang-play"></button>
+            <audio src="_english_russian_mp3/phrase13.mp3"></audio>
+          </div>
+        </div>
+      </td>
+    </tr>
+</table>
+</div>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".lang-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const rowDiv = button.closest(".phrase-row");
+      const tableRow = button.closest("tr");
+      const isEn = rowDiv.dataset.lang === 'en';
+
+      rowDiv.dataset.lang = isEn ? 'ru' : 'en';
+
+      rowDiv.querySelector('.en').style.display = isEn ? 'none' : 'block';
+      rowDiv.querySelector('.ru').style.display = isEn ? 'block' : 'none';
+
+      button.querySelector('.lang-label').textContent = isEn ? 'EN' : 'RU';
+      button.classList.remove(isEn ? 'ru' : 'en');
+      button.classList.add(isEn ? 'en' : 'ru');
+
+      tableRow.classList.toggle('lang-ru', isEn);
+    });
+  });
+
+  document.querySelectorAll(".lang-play").forEach(button => {
+    button.addEventListener("click", () => {
+      const audio = button.closest(".phrase-actions").querySelector("audio");
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    });
+  });
+});
+
+document.addEventListener('click', (event) => {
+  document.querySelectorAll('.emoji-tooltip[open]').forEach(details => {
+    if (!details.contains(event.target)) {
+      details.removeAttribute('open');
+    }
+  });
+});
+
+</script>
+
+            </div>
+          </div>
+
+          <div class="content-table-block">
+            <div class="content-table-container">
+              <ul id="content-table" class="content-table"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../tree.js"></script>
+  <script src="../../assets/core/core.js"></script>
+  <script src="../../assets/plugins/code/plugin.js"></script>
+<script src="../../assets/plugins/prism/plugin.js"></script>
+<script src="../../assets/plugins/slider/plugin.js"></script>
+
+</body>
+
+</html>
+
